@@ -92,3 +92,31 @@ Without doing this, the commits become **unreachable** and will eventually be de
 - GC uses file modification timestamps to skip recently created objects.
 
 ---
+## Screenshots
+
+### Phase 1
+- **1A:** `./test_objects` output showing all tests passing
+![1a](./screenshots/1a.png)
+- **1B:** `find .pes/objects -type f` showing sharded directory structure
+![1a](./screenshots/1b.png)
+
+### Phase 2
+- **2A:** `./test_tree` output showing all tests passing
+![1a](./screenshots/2a.png)
+- **2B:** `xxd` of a raw tree object (first 20 lines)
+![1a](./screenshots/2b.png)
+### Phase 3
+- **3A:** `pes init` → `pes add` → `pes status` sequence
+![1a](./screenshots/2a.png)
+- **3B:** `cat .pes/index` showing the text-format index
+![1a](./screenshots/2b.png)
+### Phase 4
+- **4A:** `pes log` output with three commits
+![1a](./screenshots/2a.png)
+- **4B:** `find .pes -type f | sort` showing object store 
+growth
+![1a](./screenshots/2b.png)
+- **4C:** `cat .pes/refs/heads/main` and `cat .pes/HEAD`
+![1a](./screenshots/5a.png)
+- **Final:** Full `make test-integration` output
+![1a](./screenshots/6a.png)
